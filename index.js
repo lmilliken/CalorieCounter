@@ -6,7 +6,9 @@ function calculate(event) {
 
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
-    .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    .reduce((accumulator, currentValue) => {
+      accumulator + currentValue;
+    }, 0);
 
   const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
 
