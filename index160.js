@@ -9,14 +9,14 @@ function calculate(e) {
 /*
 The reduce method takes a callback function as well as an optional initial value, its function signature is as follow:
 
-`Array.reduce(callback[, initialValue])`
+`Array.reduce(callbackFunction[, initialValue])`
 
 Note that the square brackets `[]` around `initialValue` indicates that it's an optional parameter.
 
-The `callback` reducer function itself takes 2 arguments, an accumulator and a current value:
+The `callbackFunction` reducer itself takes 2 arguments, an accumulator and a current value:
 `function(accumulator, currentValue) { /*code to run*\/}`
 or using arrow functions:
-(accumulator, currentValue) => { /*code to run*\/}
+`(accumulator, currentValue) => { /*code to run*\/}`
 
 Insert the above callback function as an argument in the `.reduce()` function.
 */

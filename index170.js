@@ -11,7 +11,7 @@ function calculate(e) {
 /*
 The reduce method takes a callback function as well as an optional initial value, its function signature is as follow:
 
-`Array.reduce(callback[, initialValue])`
+`Array.reduce(callbackFunction[, initialValue])`
 
 Note that the square brackets `[]` around `initialValue` indicates that it's an optional parameter.
 

@@ -6,21 +6,19 @@ function calculate(event) {
 
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
-    .reduce((accumulator, currentValue) => {
-      accumulator + currentValue;
-    }, 0);
+    .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
   const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-
-  const difference = maxCalories - total;
-  const surplusOrDeficit = difference < 0 ? 'Surplus' : 'Deficit';
+  console.log(total);
+  const difference = total - maxCalories;
+  const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
 
   const output = document.getElementById('output');
 
   const result = document.createElement('h3');
   result.className = 'green-text';
   const resultText = document.createTextNode(
-    `${Math.abs(difference)} Calorie ${surplusOrDeficit}`,
+    `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
   );
   result.appendChild(resultText);
   output.appendChild(result);
@@ -30,7 +28,7 @@ function calculate(event) {
 
   const recommended = document.createElement('h4');
   const recommendedText = document.createTextNode(
-    `${maxCalories} Recommended Calories`,
+    `${maxCalories} Recommended Calories`
   );
   recommended.appendChild(recommendedText);
   output.appendChild(recommended);
