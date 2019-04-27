@@ -18,8 +18,12 @@ function calculate(e) {
   const resultText = document.createTextNode(
     `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
   );
+
+  result.appendChild(resultText);
+  output.appendChild(result);
+
+  const line = document.createElement('hr');
 }
 /*
-How you can append the `resultText` to the `result`, like this:
-`result.appendChild(resultText)`
+Now add the `line` to the `output` element using the `appendChild()` method.
 */

@@ -18,8 +18,22 @@ function calculate(e) {
   const resultText = document.createTextNode(
     `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
   );
+
+  result.appendChild(resultText);
+  output.appendChild(result);
+
+  const line = document.createElement('hr');
+  output.appendChild(line);
+
+  const recommended = document.createElement('h4');
+  const recommendedText = document.createTextNode();
 }
 /*
-How you can append the `resultText` to the `result`, like this:
-`result.appendChild(resultText)`
+We want the `recommendedText` to say something like "XX Calories Recommended".
+
+The "XX" is the `maxCalories` variable that was previously created.
+
+Update the `recommendedText` to use the `maxCalories` variable in a template literal along with the text "Calories Recommended"
+
+This is similar to template literal syntax previously used to create `resultText`.
 */

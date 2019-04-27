@@ -18,8 +18,20 @@ function calculate(e) {
   const resultText = document.createTextNode(
     `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
   );
+
+  result.appendChild(resultText);
+  output.appendChild(result);
+
+  const line = document.createElement('hr');
+  output.appendChild(line);
+
+  const recommended = document.createElement('h4');
+  const recommendedText = document.createTextNode(
+    `${maxCalories} Recommended Calories`
+  );
 }
 /*
-How you can append the `resultText` to the `result`, like this:
-`result.appendChild(resultText)`
+Append the `recommendedText` node to the `recommended` element.
+
+This is similar to how the `resultText` is appended to `result` previously.
 */

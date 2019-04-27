@@ -18,8 +18,15 @@ function calculate(e) {
   const resultText = document.createTextNode(
     `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
   );
+
+  result.appendChild(resultText);
+  output.appendChild(result);
+
+  const line = document.createElement('hr');
+  output.appendChild(line);
 }
 /*
-How you can append the `resultText` to the `result`, like this:
-`result.appendChild(resultText)`
+Let's create a few more HTML elements to add to the `output`.
+
+Create an `h4` element and assign it to a variable name `recommended`.
 */

@@ -18,8 +18,12 @@ function calculate(e) {
   const resultText = document.createTextNode(
     `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
   );
+
+  result.appendChild(resultText);
+  output.appendChild(result);
 }
 /*
-How you can append the `resultText` to the `result`, like this:
-`result.appendChild(resultText)`
+Similarly, append the `result` to the `output` element with the `appendChild()` method.
+
+Now if you enter in data and push the Calculate button, you will see the text added to the HTML document!
 */

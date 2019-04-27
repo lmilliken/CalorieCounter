@@ -87,7 +87,7 @@ input.food-control {
   padding: 0px 20px;
 }
 
-.border {
+.bordered-class {
   border: 2px solid rgb(21, 101, 192);
   border-radius: 5px;
 }

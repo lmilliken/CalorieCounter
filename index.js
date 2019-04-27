@@ -37,7 +37,7 @@ function calculate(event) {
   consumed.innerHTML = `${total} Consumed Calories`;
   output.appendChild(consumed);
 
-  output.setAttribute('class', 'border');
+  output.setAttribute('class', 'bordered-class');
   output.style.backgroundColor = '#FFF9C4';
 }
 
