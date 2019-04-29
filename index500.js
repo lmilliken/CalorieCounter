@@ -39,10 +39,10 @@ function calculate(e) {
   output.appendChild(consumed);
   output.setAttribute('class', 'bordered-class');
 }
+
+document.getElementById('add').onclick = function() {};
 /*
-Another way to add styling is to use the `style` property directly, like `output.style.width = '300px'`
+Inside the function, create an `input` document element and assign it to a variable name `foodInput`.
 
-Add a `backgroundColor` style to `output` and set it equal to `'#FFF9C4'`.
-
-The `calculate()` function is now finished!
+This is similiar to how you created the `result` element previously.
 */

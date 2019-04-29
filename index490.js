@@ -35,8 +35,14 @@ function calculate(e) {
 
   const consumed = document.createElement('h4');
   consumed.innerHTML = `${total} Consumed Calories`;
-  output.appendChild(consumed);
 
+  output.appendChild(consumed);
   output.setAttribute('class', 'bordered-class');
-  output.style.backgroundColor = '#FFF9C4';
 }
+/*
+When the user clicks the "Add Entry" button, they should be provided with additional text inputs to enter in a food name and calorie amount.  These will be included in the the `calculate()` function.
+
+In the HTML document, notice that the "Add Entry" button has and `id` of `add`: `<button type="button" class="btn-add" id="add">`
+
+Get a reference to the `document` element with the id of `add` and set its `onclick` property  it equal to a blank function `function(){}`
+*/

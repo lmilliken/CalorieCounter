@@ -1,15 +1,13 @@
 document.getElementById('calorie-form').onsubmit = calculate;
 
-function calculate(event) {
-  event.preventDefault();
-  clearOutput();
-
+function calculate(e) {
+  e.preventDefault();
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
   const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-  console.log(total);
+
   const difference = total - maxCalories;
   const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
 
@@ -20,6 +18,7 @@ function calculate(event) {
   const resultText = document.createTextNode(
     `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
   );
+
   result.appendChild(resultText);
   output.appendChild(result);
 
@@ -30,51 +29,28 @@ function calculate(event) {
   const recommendedText = document.createTextNode(
     `${maxCalories} Recommended Calories`
   );
+
   recommended.appendChild(recommendedText);
   output.appendChild(recommended);
 
   const consumed = document.createElement('h4');
   consumed.innerHTML = `${total} Consumed Calories`;
-  output.appendChild(consumed);
 
+  output.appendChild(consumed);
   output.setAttribute('class', 'bordered-class');
-  output.style.backgroundColor = '#FFF9C4';
 }
 
 document.getElementById('add').onclick = function() {
   const foodInput = document.createElement('input');
   foodInput.placeholder = 'food name';
-  foodInput.classList.add('food-control');
-  document.getElementById('entries').appendChild(foodInput);
-
-  const calorieInput = document.createElement('input');
-  calorieInput.setAttribute('type', 'number');
-  calorieInput.setAttribute('min', '0');
-  calorieInput.classList.add('cal-control');
-  calorieInput.classList.add('extra-cal-control');
-  document.getElementById('entries').appendChild(calorieInput);
 };
 
-document.getElementById('clear').onclick = function() {
-  clearOutput();
-  clearForm();
-};
+/*
+We want to add a class name of `food-control` to the `foodInput` element.  We will reference this class name when we remove these inputs later on.
 
-const clearOutput = () => {
-  document.getElementById('output').innerHTML = '';
-  document.getElementById('output').classList.remove('border');
-};
+In addition to using the `setAttribute` method, we can also update the `classList` property to add a class name, like
 
-const clearForm = () => {
-  const foodInputs = document.getElementsByClassName('food-control');
-  while (foodInputs[0]) {
-    foodInputs[0].parentNode.removeChild(foodInputs[0]);
-  }
+`myInput.classList.add('my-class)`
 
-  const calInputs = document.getElementsByClassName('extra-cal-control');
-  while (calInputs[0]) {
-    calInputs[0].parentNode.removeChild(calInputs[0]);
-  }
-
-  document.getElementById('calorie-form').reset();
-};
+Add a class name of `food-control` to the `foodInput` element. 
+*/

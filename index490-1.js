@@ -35,14 +35,40 @@ function calculate(e) {
 
   const consumed = document.createElement('h4');
   consumed.innerHTML = `${total} Consumed Calories`;
-
   output.appendChild(consumed);
+
   output.setAttribute('class', 'bordered-class');
+  output.style.backgroundColor = '#FFF9C4';
 }
+
 /*
-Another way to add styling is to use the `style` property directly, like `output.style.width = '300px'`
+Next we heed to specify what to do when the user clicks the "Clear" button.
 
-Add a `backgroundColor` style to `output` and set it equal to `'#FFF9C4'`.
+Get a reference to the `document` element with the id of `clear` and set its `onclick` property  it equal to a blank function `function(){}`
 
-The `calculate()` function is now finished!
+*/
+
+/*
+Inside the `function` body, instruct your code to call two other functions, ` clearOutput()` and `clearForm()`.  We will create these functions shortly.
+
+*/
+
+/*
+Create a variable name `clearOutput` and set it equal to a function using arrow function notation, like
+
+`const myFunction = () => {}`
+
+which is the same as
+
+`function myFunction () {}`
+*/
+
+/*
+Create a variable name `clearOutput` and set it equal to a function using arrow function notation, like
+
+`const myFunction = () => {}`
+
+which is the same as
+
+`function myFunction () {}`
 */
