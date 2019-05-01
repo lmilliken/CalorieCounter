@@ -4,7 +4,7 @@ function calculate(e) {
   e.preventDefault();
   const total = Array.from(document.getElementsByClassName('cal-control'));
   const meal = total[0];
-  console.log(meal.value);
+  // console.log(meal.value);
 }
 /*
 We need a way to iterate through all the `meal` items in the `total` array and extract the values that the user entered.

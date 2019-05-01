@@ -54,9 +54,8 @@ document.getElementById('add').onclick = function() {
   document.getElementById('entries').appendChild(calorieInput);
 };
 
+document.getElementById('clear').onclick = function() {};
+
 /*
-Next we heed to specify what to do when the user clicks the "Clear" button.
-
-Get a reference to the `document` element with the id of `clear` and set its `onclick` property  it equal to a blank function `function(){}`
-
+Inside the `function` body, instruct your code to call two other functions, ` clearOutput()` and `clearForm()`.  We will create these functions shortly.
 */

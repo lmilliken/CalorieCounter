@@ -2,6 +2,8 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+  clearOutput();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -54,9 +56,29 @@ document.getElementById('add').onclick = function() {
   document.getElementById('entries').appendChild(calorieInput);
 };
 
-/*
-Next we heed to specify what to do when the user clicks the "Clear" button.
+document.getElementById('clear').onclick = function() {
+  clearOutput();
+  clearForm();
+};
 
-Get a reference to the `document` element with the id of `clear` and set its `onclick` property  it equal to a blank function `function(){}`
+const clearOutput = () => {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('output').classList.remove('bordered-class');
+};
+
+const clearForm = () => {
+  const foodInputs = Array.from(
+    document.getElementsByClassName('food-control')
+  );
+
+  foodInputs.map();
+};
+
+/*
+Recall how we need to provide a function to `map()`. 
+
+This function will take each input item, in our case we'll call it `index`, as an argument.  Inside the function body, we need to call the `remove()` method. 
+
+In between the parentheses of the .map() function, enter `input => input.remove()`.
 
 */

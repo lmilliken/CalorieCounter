@@ -54,9 +54,28 @@ document.getElementById('add').onclick = function() {
   document.getElementById('entries').appendChild(calorieInput);
 };
 
+document.getElementById('clear').onclick = function() {
+  clearOutput();
+  clearForm();
+};
+
+const clearOutput = () => {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('output').classList.remove('bordered-class');
+};
+
 /*
-Next we heed to specify what to do when the user clicks the "Clear" button.
+The `clearOutput` function is called when the user clicks the "Clear" button.
 
-Get a reference to the `document` element with the id of `clear` and set its `onclick` property  it equal to a blank function `function(){}`
+It also need to be be run when the user clicks the  "Calculate" button.
 
+In the `calculate() function, right after `event.preventDefault()`, run the `clearOutput` function.
+
+Create a variable name `clearForm` and set it equal to a function using arrow function notation, like
+
+`const myFunction = () => {}`
+
+which is the same as
+
+`function myFunction () {}`
 */

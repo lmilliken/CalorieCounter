@@ -5,5 +5,3 @@ Here is an example of an empty function called `square`
 function square() {
 }
 */
-
-function calculate() {}

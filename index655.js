@@ -2,6 +2,8 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+  clearOutput();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -54,9 +56,22 @@ document.getElementById('add').onclick = function() {
   document.getElementById('entries').appendChild(calorieInput);
 };
 
+document.getElementById('clear').onclick = function() {
+  clearOutput();
+  clearForm();
+};
+
+const clearOutput = () => {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('output').classList.remove('bordered-class');
+};
+
 /*
-Next we heed to specify what to do when the user clicks the "Clear" button.
+Create a variable name `clearForm` and set it equal to a function using arrow function notation, like
 
-Get a reference to the `document` element with the id of `clear` and set its `onclick` property  it equal to a blank function `function(){}`
+`const myFunction = () => {}`
 
+which is the same as
+
+`function myFunction () {}`
 */

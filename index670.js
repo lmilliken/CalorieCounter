@@ -2,6 +2,8 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+  clearOutput();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -54,9 +56,24 @@ document.getElementById('add').onclick = function() {
   document.getElementById('entries').appendChild(calorieInput);
 };
 
+document.getElementById('clear').onclick = function() {
+  clearOutput();
+  clearForm();
+};
+
+const clearOutput = () => {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('output').classList.remove('bordered-class');
+};
+
+const clearForm = () => {
+  const foodInputs = Array.from(
+    document.getElementsByClassName('food-control')
+  );
+};
+
 /*
-Next we heed to specify what to do when the user clicks the "Clear" button.
+We need a way to iterate through all the `foodInputs` items by using the `map()` function.
 
-Get a reference to the `document` element with the id of `clear` and set its `onclick` property  it equal to a blank function `function(){}`
-
+Enter `foodInputs.map()`
 */

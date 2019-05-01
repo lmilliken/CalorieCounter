@@ -2,6 +2,8 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+  clearOutput();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -54,9 +56,29 @@ document.getElementById('add').onclick = function() {
   document.getElementById('entries').appendChild(calorieInput);
 };
 
-/*
-Next we heed to specify what to do when the user clicks the "Clear" button.
+document.getElementById('clear').onclick = function() {
+  clearOutput();
+  clearForm();
+};
 
-Get a reference to the `document` element with the id of `clear` and set its `onclick` property  it equal to a blank function `function(){}`
+const clearOutput = () => {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('output').classList.remove('bordered-class');
+};
+
+const clearForm = () => {
+  const foodInputs = Array.from(
+    document.getElementsByClassName('food-control')
+  );
+
+  foodInputs.map(input => input.remove());
+
+  const calInputs = Array.from(
+    document.getElementsByClassName('extra-cal-control')
+  );
+};
+
+/*
+Similar to how you mapped through the `foodInputs` elements to remove each input, map through the elements in `calInputs` and remove them.
 
 */

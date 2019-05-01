@@ -9,7 +9,7 @@ function calculate(event) {
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 
   const maxCalories = document.getElementById('female').checked ? 2000 : 2500;
-  console.log(total);
+
   const difference = total - maxCalories;
   const surplusOrDeficit = difference > 0 ? 'Surplus' : 'Deficit';
 
@@ -20,6 +20,7 @@ function calculate(event) {
   const resultText = document.createTextNode(
     `${Math.abs(difference)} Calorie ${surplusOrDeficit}`
   );
+
   result.appendChild(resultText);
   output.appendChild(result);
 
@@ -62,19 +63,21 @@ document.getElementById('clear').onclick = function() {
 
 const clearOutput = () => {
   document.getElementById('output').innerHTML = '';
-  document.getElementById('output').classList.remove('border');
+  document.getElementById('output').classList.remove('bordered-class');
 };
 
 const clearForm = () => {
-  const foodInputs = document.getElementsByClassName('food-control');
-  while (foodInputs[0]) {
-    foodInputs[0].parentNode.removeChild(foodInputs[0]);
-  }
+  const foodInputs = Array.from(
+    document.getElementsByClassName('food-control')
+  );
 
-  const calInputs = document.getElementsByClassName('extra-cal-control');
-  while (calInputs[0]) {
-    calInputs[0].parentNode.removeChild(calInputs[0]);
-  }
+  foodInputs.map(input => input.remove());
+
+  const calInputs = Array.from(
+    document.getElementsByClassName('extra-cal-control')
+  );
+
+  calInputs.map(input => input.remove());
 
   document.getElementById('calorie-form').reset();
 };

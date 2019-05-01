@@ -54,9 +54,19 @@ document.getElementById('add').onclick = function() {
   document.getElementById('entries').appendChild(calorieInput);
 };
 
-/*
-Next we heed to specify what to do when the user clicks the "Clear" button.
+document.getElementById('clear').onclick = function() {
+  clearOutput();
+  clearForm();
+};
 
-Get a reference to the `document` element with the id of `clear` and set its `onclick` property  it equal to a blank function `function(){}`
+const clearOutput = () => {
+  document.getElementById('output').innerHTML = '';
+};
+
+/*
+Now notice how even though the `output` element is empty, it still has a border around it.  This is because we previously added the `bordered-class` class to this element.
+
+Now remove the `bordered-class` class, for example:
+  `document.getElementById('my-div').classList.remove('my-class')`
 
 */

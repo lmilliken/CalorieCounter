@@ -2,6 +2,8 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+  clearOutput();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -54,9 +56,22 @@ document.getElementById('add').onclick = function() {
   document.getElementById('entries').appendChild(calorieInput);
 };
 
+document.getElementById('clear').onclick = function() {
+  clearOutput();
+  clearForm();
+};
+
+const clearOutput = () => {
+  document.getElementById('output').innerHTML = '';
+  document.getElementById('output').classList.remove('bordered-class');
+};
+
+const clearForm = () => {};
+
 /*
-Next we heed to specify what to do when the user clicks the "Clear" button.
+We need to remove the elements with the class names of `food-control` that were added previously when the user clicked the "Add" button.
 
-Get a reference to the `document` element with the id of `clear` and set its `onclick` property  it equal to a blank function `function(){}`
+Inside the function body of `clearForm`, create a variable name `foodInputs` and set it equal to an array of elements with the class name of `food-control`.
 
+This is similar to how you declared the `total` variable previously in the `calculate` method.
 */

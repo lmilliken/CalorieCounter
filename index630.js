@@ -54,9 +54,15 @@ document.getElementById('add').onclick = function() {
   document.getElementById('entries').appendChild(calorieInput);
 };
 
+document.getElementById('clear').onclick = function() {
+  clearOutput();
+  clearForm();
+};
+
+const clearOutput = () => {};
+
 /*
-Next we heed to specify what to do when the user clicks the "Clear" button.
+We need to remove the contents inside of element with the `id` of output`.  
 
-Get a reference to the `document` element with the id of `clear` and set its `onclick` property  it equal to a blank function `function(){}`
-
+To do so, set the `innerHTML` property of that element equal to an empty string `''`.
 */

@@ -5,5 +5,5 @@ function calculate(e) {
   document.getElementsByClassName('cal-control');
 }
 /*
-No assign the document object  you just created to a variable name `total`.  Since this variable will not change, use `const` create it.
+Now assign the document object you just referenced to a variable name `total`.  Since this variable will not change, use `const` to create it.
 */
