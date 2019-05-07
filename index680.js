@@ -37,9 +37,10 @@ function calculate(e) {
 
   const consumed = document.createElement('h4');
   consumed.innerHTML = `${total} Consumed Calories`;
-
   output.appendChild(consumed);
+
   output.setAttribute('class', 'bordered-class');
+  output.style.backgroundColor = '#FFF9C4';
 }
 
 document.getElementById('add').onclick = function() {
@@ -77,7 +78,7 @@ const clearForm = () => {
 /*
 Recall how we need to provide a function to `map()`. 
 
-This function will take each input item, in our case we'll call it `index`, as an argument.  Inside the function body, we need to call the `remove()` method. 
+This function will take each input item, in our case we'll call it `input`, as an argument.  Inside the function body, we need to call the `remove()` method. 
 
 In between the parentheses of the .map() function, enter `input => input.remove()`.
 

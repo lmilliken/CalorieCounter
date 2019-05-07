@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -14,7 +15,7 @@ function calculate(e) {
 /*
 If you look near the bottom of the HTML page, notice that there is currently an empty div: `<div id="output"></div>`.
 
-We will be printing output inside this div, telling the user if they are in a calorie surplus or deficit.
+We will be inserting output inside this div, telling the user if they are in a calorie surplus or deficit.
 
 Create a variable name `output` and set it equal to this document element with the id of `output`.
 */

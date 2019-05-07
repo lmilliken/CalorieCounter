@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -27,10 +28,10 @@ Some people consider this a little cumbersome and prefer to use template literal
 
 Template literals are enclosed in backticks (`/`/``), and Javascript expressions and variables can be embedded by enclosing them in `${}`.
 
-For example, if you have a variable name `firstName` and want to log a string that says greets the person and tells them what date is it, you would write the template literal as:
+For example, if you have a variable name `firstName` and want to log a string that greets the person and tells them what date is it, you would write the template literal as:
 `console.log(`Hello ${firstName}, today is ${Date.now()}`)`
 instead of
-`console.log("Hello " + firstName + ", today is " + Date.now())`
+`console.log('Hello ' + firstName + ', today is ' + Date.now())`
 
 Convert the data inside of `createTextNode()` to be a template literal.
 */

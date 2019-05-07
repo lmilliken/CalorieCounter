@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -16,8 +17,9 @@ function calculate(e) {
 /*
 Now it's time to create the HTML elements that we will add inside of `output`.
 
-Javascript has a createElement() method that we can use, for example:
+To create an element, use `createElement()`, for example:
+
 `const myHeading1 = document.createElement('h1')`
 
-Create a `h3` element and assign it to a variable name `result`.
+Create an `h3` element and assign it to a variable name `result`.
 */

@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -35,9 +36,10 @@ function calculate(e) {
 
   const consumed = document.createElement('h4');
   consumed.innerHTML = `${total} Consumed Calories`;
-
   output.appendChild(consumed);
+
   output.setAttribute('class', 'bordered-class');
+  output.style.backgroundColor = '#FFF9C4';
 }
 
 document.getElementById('add').onclick = function() {
@@ -67,15 +69,7 @@ const clearOutput = () => {
 /*
 The `clearOutput` function is called when the user clicks the "Clear" button.
 
-It also need to be be run when the user clicks the  "Calculate" button.
+It also need to be ran when the user clicks the  "Calculate" button.
 
 In the `calculate() function, right after `event.preventDefault()`, run the `clearOutput` function.
-
-Create a variable name `clearForm` and set it equal to a function using arrow function notation, like
-
-`const myFunction = () => {}`
-
-which is the same as
-
-`function myFunction () {}`
 */

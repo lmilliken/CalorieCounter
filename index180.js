@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => {
@@ -16,7 +17,7 @@ Going back to our callback function, we want to sum up all of the numbers in the
 As an example, let's says we have an array `[1,3,5]` named `arr` and we want to sum up all the numbers.
 
 We can use the reduce function as follows 
-`arr.reduce((accumulator, currentValue) => accumulator + currentValue }, 0);`
+`arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);`
 
 The `reduce()` function will iterate through each item in the array and run the callback function:
 
@@ -24,6 +25,7 @@ The `reduce()` function will iterate through each item in the array and run the 
 
 At `arr[0]`, the function is `(0, 1) => 0 + 1`, 
 since `arr[0] = 1 = currentValue`
+
 Note that the `accumulator` starts at `0` because that is what we povide as the initial value argument.  After running `0 + 1`, the accumulator is now `1`, which is passed to next invocation of the callback function at
 
 arr[1], the function is `(1, 3) => 1 + 3`,

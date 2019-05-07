@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -38,11 +39,11 @@ function calculate(e) {
   output.appendChild(consumed);
 }
 /*
-You can also add styling with the `setAttribute()` method.
+You can also add styling with the `setAttribute()` method.  This method takes two arguments: the name of the attribute and the value that the attribute should be.
 
-For example, if you want to set the `value` of an `input` element to 4, you would write
-`input.setAttribute('value', '4')`
+For example, if you want to set the `width` of an `input` element to 100px, you would write
+`input.setAttribute('width', '100px')`
 
-Set the `class` attribute of the `output` element to be equal a class named `bordered-class`.
+Set the `class` attribute of the `output` element equal to a class named `bordered-class`.
 
 */

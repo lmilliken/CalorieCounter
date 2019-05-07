@@ -37,9 +37,10 @@ function calculate(e) {
 
   const consumed = document.createElement('h4');
   consumed.innerHTML = `${total} Consumed Calories`;
-
   output.appendChild(consumed);
+
   output.setAttribute('class', 'bordered-class');
+  output.style.backgroundColor = '#FFF9C4';
 }
 
 document.getElementById('add').onclick = function() {
@@ -71,7 +72,7 @@ Create a variable name `clearForm` and set it equal to a function using arrow fu
 
 `const myFunction = () => {}`
 
-which is the same as
+which is similar to
 
 `function myFunction () {}`
 */

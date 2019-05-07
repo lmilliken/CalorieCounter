@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -36,5 +37,5 @@ function calculate(e) {
 /*
 Similar to the `recommended` element.  We are going to create a `consumed` element that will display something like "XX Consumed Calories".
 
-Start by created a `h4` element and assign it to a variable name `consumed`.
+Create an `h4` element and assign it to a variable name `consumed`.
 */

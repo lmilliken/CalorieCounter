@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -35,9 +36,10 @@ function calculate(e) {
 
   const consumed = document.createElement('h4');
   consumed.innerHTML = `${total} Consumed Calories`;
-
   output.appendChild(consumed);
+
   output.setAttribute('class', 'bordered-class');
+  output.style.backgroundColor = '#FFF9C4';
 }
 
 document.getElementById('add').onclick = function() {
@@ -57,6 +59,6 @@ document.getElementById('add').onclick = function() {
 /*
 Next we heed to specify what to do when the user clicks the "Clear" button.
 
-Get a reference to the `document` element with the id of `clear` and set its `onclick` property  it equal to a blank function `function(){}`
+Get a reference to the `document` element with the id of `clear` and set its `onclick` property to equal to a blank function `function(){}`
 
 */

@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -35,9 +36,10 @@ function calculate(e) {
 
   const consumed = document.createElement('h4');
   consumed.innerHTML = `${total} Consumed Calories`;
-
   output.appendChild(consumed);
+
   output.setAttribute('class', 'bordered-class');
+  output.style.backgroundColor = '#FFF9C4';
 }
 
 document.getElementById('add').onclick = function() {
@@ -51,5 +53,5 @@ Notice that parent container of all of the inputs has an id of `entries`: `<div 
 
 Get a reference to the document element with an id of `entries` and append the `foodInput` element to it by chaining on the `.appendChild()` function.  
 
-This is similar to the the other `appendChild()` functions that you have written previously.
+This is similar to the the other `appendChild()` methods that you have used previously.
 */

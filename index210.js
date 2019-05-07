@@ -22,11 +22,13 @@ For example:
 Since (5 - 3 == 4) evaluates to `false`, `No` will be returned.
 
 In a traditional `if else` statement, it will be the equivalent to
-`if (5 - 3 == 4) {
+```
+if (5 - 3 == 4) {
   return 'Yes';
 } else {
   return 'No';
-}`
+}
+```
 
 Complete the ternary operator with `document.getElementById('female').checked` to return `2000` if it checked and `2500` if not.
 */

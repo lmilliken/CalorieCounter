@@ -24,5 +24,5 @@ Notice how if `total` is less than `maxCalories`, the `difference` is a negative
 
 We want to show the absolute value of the difference so it displays "300" rather than "-300".
 
-So, wrap the `difference` variable in a `Mathc.abs()` function.
+So, wrap the `difference` in a `Mathc.abs()` function.
 */

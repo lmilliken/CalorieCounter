@@ -31,6 +31,7 @@ function calculate(event) {
   const recommendedText = document.createTextNode(
     `${maxCalories} Recommended Calories`
   );
+
   recommended.appendChild(recommendedText);
   output.appendChild(recommended);
 

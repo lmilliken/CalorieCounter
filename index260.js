@@ -16,7 +16,7 @@ function calculate(e) {
   const result = document.createElement('h3');
 }
 /*
-Next, we create a text node that we will append to the `result` element.
+Next, we create a text node that we will later append to the `result` element.
 
 Javascript has a function called createTextNode() to accomplish this.  For example:
 `const myText = document.createTextNode("Hello world!")`

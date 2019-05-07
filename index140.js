@@ -2,8 +2,9 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control')).map(
-    meal => meal.value,
+    meal => meal.value
   );
 }
 /*

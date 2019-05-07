@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -35,9 +36,10 @@ function calculate(e) {
 
   const consumed = document.createElement('h4');
   consumed.innerHTML = `${total} Consumed Calories`;
-
   output.appendChild(consumed);
+
   output.setAttribute('class', 'bordered-class');
+  output.style.backgroundColor = '#FFF9C4';
 }
 
 document.getElementById('add').onclick = function() {
@@ -64,7 +66,7 @@ const clearOutput = () => {
 };
 
 /*
-Now notice how even though the `output` element is empty, it still has a border around it.  This is because we previously added the `bordered-class` class to this element.
+Now notice that if you click the "Clear" button, the `output` element is empty but it still has a border around it.  This is because we previously added the `bordered-class` class to this element.
 
 Now remove the `bordered-class` class, for example:
   `document.getElementById('my-div').classList.remove('my-class')`

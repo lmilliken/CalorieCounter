@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -20,6 +21,7 @@ function calculate(e) {
   );
 }
 /*
-How you can append the `resultText` to the `result`, like this:
+Now you can append the `resultText` to the `result` with the `appendChild()` method, like this:
+
 `result.appendChild(resultText)`
 */

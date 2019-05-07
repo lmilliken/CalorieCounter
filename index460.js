@@ -2,6 +2,7 @@ document.getElementById('calorie-form').onsubmit = calculate;
 
 function calculate(e) {
   e.preventDefault();
+
   const total = Array.from(document.getElementsByClassName('cal-control'))
     .map(input => Number(input.value))
     .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
@@ -42,7 +43,7 @@ Now it's time to add some styling, which can be added directly as attributes or 
 
 In our css file, we have a styling rule for any elements with a class name of `green-text`.
 
-On line ____, right after creating the `result` element, set the `className` property of `result` to be equal to `green-text`.
+On line __18__, right after creating the `result` element, set the `className` property of `result` to be equal to `'green-text'`.
 
 Now if you submit the form again and inspect the `result` element, you will see it as `<h3 class="green-text">` and notice that the text is now green.
 */
